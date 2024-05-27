@@ -68,7 +68,7 @@ def process_class(ruta):
 
                 'Nota Final': NotaFinal,
 
-                'Resultado': 'Aprobado' if aprobado else 'Suspendido'
+                'Aprobado/suspendido': 'Aprobado' if aprobado else 'Suspendido'
 
             }
 
@@ -79,7 +79,7 @@ def process_class(ruta):
             resultados.append((NotaFinal, aprobado))
 
     with open('grades.csv', 'w', newline='', encoding="UTF-8") as csvfile:
-        fieldnames = ['Nombre', 'Apellido', 'Email', 'Nota Final', 'Resultado']
+        fieldnames = ['Nombre', 'Apellido', 'Email', 'Nota Final', 'Aprobado/suspendido']
         writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
         
         writer.writeheader()
